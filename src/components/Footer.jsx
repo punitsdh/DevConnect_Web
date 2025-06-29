@@ -3,11 +3,11 @@ import React from 'react'
 const Footer = () => {
   return (
     <div>
-            <footer className="footer sm:footer-horizontal bg-neutral text-neutral-content p-10 fixed bottom-0">
+        <footer className="footer sm:footer-horizontal bg-neutral text-neutral-content p-5 fixed bottom-0">
         <aside>
             <svg
-            width="50"
-            height="50"
+            width="30"
+            height="30"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
             fillRule="evenodd"
@@ -18,8 +18,6 @@ const Footer = () => {
             </svg>
             <p>
             ACME Industries Ltd.
-            <br />
-            Providing reliable tech since 1992
             </p>
         </aside>
         <nav>
