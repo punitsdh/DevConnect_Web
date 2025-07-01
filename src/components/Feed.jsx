@@ -10,9 +10,13 @@ const Feed = () => {
   const dispatch = useDispatch();
 
   const getFeed = async () => {
-    try{const res = await axios.get(BASE_URL + "/feed", {withCredentials: true});
+    if (feed) return;
+    try{
+      const res = await axios.get(BASE_URL + "/feed", {
+        withCredentials: true,
+    });
     dispatch(addFeed(res?.data?.data));
-    }catch(err){
+    } catch(err){
       console.log(err.status);
     }
   };
@@ -20,10 +24,15 @@ const Feed = () => {
   useEffect(() => {
     getFeed();
   }, [])
+  if(!feed) return;
 
-  return feed && <div className="flex justify-center my-10">
-    <UserCard user = {feed[0]}/>
-  </div>
+  return( 
+    feed && (
+      <div className="flex justify-center my-10">
+        <UserCard user = {feed[0]}/>
+      </div>
+    )
+  );
 };
 
 export default Feed;
