@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { BASE_URL } from '../utils/constants';
 import {addConnections} from "../utils/connectionSlice";
 import axios from 'axios';
+import {Link} from "react-router-dom";
 
 
 const Connections = () => {
@@ -55,6 +56,9 @@ const Connections = () => {
               {age && gender && <p>{age + ", " + gender}</p>}
               <p>{about}</p>
             </div>
+            <Link to={"/chat/" + _id}>
+              <button className="btn btn-primary">Chat</button>
+            </Link>
           </div>
         );
       })}
